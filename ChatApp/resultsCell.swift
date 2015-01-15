@@ -8,6 +8,7 @@
 
 import UIKit
 
+//Generated in users tableview and display information of a user
 class resultsCell: UITableViewCell {
 
     @IBOutlet weak var usernameLbl: UILabel!

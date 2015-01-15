@@ -8,6 +8,7 @@
 
 import UIKit
 
+//Handles logging in to an available account
 class ViewController: UIViewController {
 
     @IBOutlet weak var signupBtn: UIButton!

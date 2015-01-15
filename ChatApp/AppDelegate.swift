@@ -12,11 +12,15 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
+    //After setting up parse servers set applicationId and clientKey to your matching
+    var applicationId = "";
+    var clientKey = "";
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-        Parse.setApplicationId("tn8N1OpQ8YS1AhJIcCbj9jtKpQNhMTJoRkoNHXSQ", clientKey: "UfFLcy5XqReMEesDCSQriKjAUJtHI8Le1CGOJOeH")
+        Parse.setApplicationId(applicationId, clientKey: clientKey)
         
         let notificationTypes = UIUserNotificationType.Alert | UIUserNotificationType.Badge | UIUserNotificationType.Sound
         
@@ -26,11 +30,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
+    
+    //Receives Parse Push notification to update for new messages
     func application(application: UIApplication, didRegisterUserNotificationSettings notificationSettings: UIUserNotificationSettings) {
         
         UIApplication.sharedApplication().registerForRemoteNotifications()
         
     }
+    
     
     func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
         

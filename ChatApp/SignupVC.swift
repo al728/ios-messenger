@@ -8,6 +8,7 @@
 
 import UIKit
 
+//Allows a new user to create an account
 class SignupVCViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITextFieldDelegate {
 
     
@@ -105,6 +106,7 @@ class SignupVCViewController: UIViewController, UINavigationControllerDelegate, 
 
     }
     
+    // Called when user clicks SignUp Button and creates a new user on Parse
     @IBAction func signupBtn_click(sender: AnyObject) {
         var user = PFUser()
         user.username = usernameTxt.text
